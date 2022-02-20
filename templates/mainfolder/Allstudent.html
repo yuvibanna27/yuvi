@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% extends 'mainfolder/base1.html' %}
+    {% block body_block %}
+     
+         <!DOCTYPE html>
+         {%load staticfiles%} 
+         <html lang="en">
+         <head>
+             <meta charset="UTF-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Document</title>
+             <link rel="stylesheet" href="{% static 'cssfiles/demo1.css' %}">
+             <style>
+                 table, th, td {
+                   border:1px solid black;
+                   border-collapse: collapse;
+                 }
+                 .a1:hover {
+                        /* Doesn't work! */
+                        font-size: large;
+                        } 
+                 </style>  
+                   
+         </head>
+ 
+         <body  oncontextmenu="return false;">
+
+            <h1 style="font-size: 50px; text-align: center;">List of the Student  !!!</h1>
+            <form  action="/alldata/" style="margin-top: 10px;" id="form" method="GET"> 
+                {% csrf_token %}
+                <input  style=" width: 200px; height: 30px; border-radius:10px; border-radius: 10px;  border: solid black 2px;  margin-top: 5px; margin-right: 0px;" type="search" id="query" name="q"  placeholder="Search...">
+                <input style="background-image: linear-gradient(to right, red , yellow); width: 100px;" type="submit" placeholder="Search "  value="Submit" style="border-radius: 10px;  border: solid black 2px; width: 60px;" >
+            </form>
+            <br>
+             <div class="table-responsive"> 
+                 <div class="container">
+                      
+                     {% if book_list %} 
+                     <table style="width:100%" class="flat-table flat-table-1">
+                     <thead>
+                        <th> Studentname </th> 
+                        <th> Email </th> 
+                        <th> Classname </th> 
+                        <th> Branch </th>
+                        <th> Mobile_no </th> 
+                        <th> date_of_birth </th> 
+                        <th> address </th> 
+                        <th> Actions </th> 
+                     </thead>
+                     {% for book in book_list %}
+                     <tbody>
+                         <tr>
+                            <td> {{book.studentname}}</td> 
+                            <td>{{book.email}}</td> 
+                            <td>{{book.classname}}</td> 
+                            <td>{{book.branch}}</td> 
+                            <td>{{book.mobile_no}}</td> 
+                            <td>{{book.date_of_birth}}</td> 
+                            <td>{{book.address}}</td> 
+                            <td><a class="a1"  style="color: red;  " href="/delete1/{{book.id }}">Delete</a><br><a class="a1" style="color: rgb(17, 6, 6); " href="/showissuebook/{{book.id}}">BookAlote</a></td> 
+                         </tr>
+                         {% endfor %} 
+                     </tbody>
+                 </table>
+                 {%else%} 
+                     <p style="text-align: center; font-size: larger;" >Record Not found </p> 
+                 {% endif %} 
+                 </div>
+               </div>
+         </body>
+         </html>
+    {% endblock %}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<title>LMS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="{% static 'cssfiles/demo.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+#example1 {
+  border: 10px solid black;
+  padding: 35px;
+  background: url(img_flwr.gif);
+  background-repeat: no-repeat;
+}
+
+
+ .w3-jumbo {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  text-shadow: 3px 3px 3px #ababab;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+</style>
+<body oncontextmenu="return false;">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 style="text-shadow: 2px 2px ;" class="w3-padding-64"><b>YouTech.com</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
+    <a href="/showbooks" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Library Account ...</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Library Management System</b></h1>
+    <h1 style="text-shadow: 2px 2px;" ><b>Showcase.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+
+
+  
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="https://media.istockphoto.com/photos/asian-university-student-studying-in-library-observing-social-picture-id1281913376?b=1&k=20&m=1281913376&s=170667a&w=0&h=yXmqVgSuRs6uQclnBa8uSsjgD9_8d0fvi8jazo2qHcs=" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+      <img src="https://media.istockphoto.com/photos/ebook-digital-technology-and-elearning-picture-id1254724408?b=1&k=20&m=1254724408&s=170667a&w=0&h=t9IcOzNDIqAaA_fIipoWbysQdOvkltG9z5HNU-fEg40=" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian design">
+      <img src="https://images.unsplash.com/photo-1590598687530-581406de2262?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxpYnJhcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" style="width:100%" onclick="onClick(this)" alt="White walls with designer chairs">
+    </div>
+
+    <div class="w3-half">
+      <img src="https://media.istockphoto.com/photos/wooden-bookshelves-filled-with-books-picture-id1265077901?b=1&k=20&m=1265077901&s=170667a&w=0&h=LBfpUBQC8lwaURRu_3N5H9OQKmKo8kXddLSVCtqJrgc=" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
+      <img src="https://media.istockphoto.com/photos/modern-library-with-laptops-on-the-table-and-books-on-the-bookshelves-picture-id1308634001?b=1&k=20&m=1308634001&s=170667a&w=0&h=kyUAgNddlxX2AS3jc-cUV1DH_8nvBtzptLSLTqTWKI0=" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
+      <img src="https://media.istockphoto.com/photos/young-afro-american-woman-sitting-at-table-with-books-and-laptop-for-picture-id1266628951?b=1&k=20&m=1266628951&s=170667a&w=0&h=n9hssLnsA4h2cqZdUJ40-iT_uvEgLkom6NopI77ZzXs=" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+    </div>
+  </div> 
+
+
+
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 style="text-shadow: 2px 2px;" ><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p> Library provides reference and referral service to its users. Queries are answered using all possible sources. </p>
+    <p>Library users can reserve any book using our online reservation system if it is already issued. 
+    Reserved books are not reissued. Library user is automatically informed through email when a reserved book is returned and the same is held at circulation desk for two days.
+     If the reserved book is not collected within two days,it is issued to other users or shelved.</p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 style="text-shadow: 2px 2px;" ><b>Designers.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>The best desiners in the world.</p>
+    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p><b>Our designers are thoughtfully chosen</b>:</p>
+  </div>
+
+  <!-- The Team -->
+
+ <div id="example1">
+  <h2 style="text-shadow: 2px 2px;" >yuvraj singh chouhan...</h2>
+  <p>For designers who never stop learning from masters: fresh collection of video speeches from top experts in the areas of product design ans user experience .</p>
+</div>
+
+
+  <!-- Packages / Pricing Tables -->
+ 
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 style="text-shadow: 2px 2px;"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Send the massege to the student regarding the issuing books</p>
+    <form   method="POST">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+        {% csrf_token %}
+      <button type="submit" value="Send" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+      
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+  <a href="#" class="fa fa-facebook"></a>
+  
+  <p class="w3-right">Powered by <a href="#" title="W3.CSS" target="_blank" class="w3-hover-opacity">yuvi_banna</a>
+  </p>
+  
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+//*function onClick(element) {
+ // document.getElementById("img01").src = element.src;
+ // document.getElementById("modal01").style.display = "block";
+ // var captionText = document.getElementById("caption");
+//  captionText.innerHTML = element.alt;
+//}>
+
+
+</script>
+
+</body>
+</html>

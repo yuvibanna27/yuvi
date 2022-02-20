@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% extends 'mainfolder/base1.html' %}
+    {% block body_block %}
+        <!DOCTYPE html>
+        {%load staticfiles%} 
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link rel="stylesheet" href="{% static 'cssfiles/demo1.css' %}">
+            <style>
+                table, th, td {
+                  border:1px solid black;
+                  border-collapse: collapse;
+                }
+                </style>  
+        </head>
+
+        <body oncontextmenu="return false;">
+            <div class="table-responsive"> 
+                <div class="container">
+                    <h1 style="font-size: 50px; text-align: center;">List of the Books !!!</h1><br>
+                    {% if book_list %} 
+                    <table style="width:100%" class="flat-table flat-table-1">
+                        <thead> 
+                            <th> Email </th>  
+                            <th> Bookname </th> 
+                            <th> Auther Name </th> 
+                            <th> Total Book </th> 
+                            <th> Date </th>
+                            <th> Actions </th>
+                             
+                        </thead>
+                    {% for book in book_list %}
+                    <tbody>
+                        <tr>
+                            <td>{{book.email}}</td> 
+                            <td>{{book.bookname}}</td> 
+                            <td>{{book.auther_name}}</td> 
+                            <td>{{book.total_book}}</td> 
+                            <td> {{book.date}}</td> 
+                            <td><a style="color: red; " href="/delete2/{{book.id }}">Delete</a><br><a style="color: rgb(255, 255, 255); " href="/alldata">Back</a></td> 
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                </table>
+                {%else%} 
+                    <p style="text-align: center;" > No Books are found </p> 
+                {% endif %} 
+                </div>
+              </div>
+        </body oncontextmenu="return false;">
+        </html>
+        <!-- <!DOCTYPE html>
+        {%load staticfiles%} 
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link rel="stylesheet" href="{% static 'cssfiles/demo1.css' %}">
+            <style>
+                table, th, td {
+                  border:1px solid black;
+                  border-collapse: collapse;
+                }
+                .a1:hover {
+                       /* Doesn't work! */
+                       font-size: large;
+                       }
+                
+                </style>  
+        </head>
+
+        <body>
+           <h1 style="font-size: 50px; text-align: center;">List of the Books !!!</h1><br>
+            <div class="table-responsive"> 
+                <div class="container">
+                     
+                    {% if book_list %} 
+                    <table style="width:100%" class="flat-table flat-table-1">
+                    <thead>
+                       <th> Email </th>  
+                            <th> Bookname </th> 
+                            <th> Auther Name </th> 
+                            <th> Total Book </th> 
+                            <th> Date </th>
+                            <th> Actions </th>
+                    </thead>
+                    {% for book in book_list %}
+                    <tbody>
+                        <tr>
+                            <td>{{book.email}}</td> 
+                            <td>{{book.bookname}}</td> 
+                            <td>{{book.auther_name}}</td> 
+                            <td>{{book.total_book}}</td> 
+                            <td> {{book.date}}</td> 
+                            <td><a class="a1" style="color: red; " href="/delete2/{{book.id }}">Delete</a><br><a  class="a1" style="color: rgb(255, 255, 255); " href="/alldata">Back</a></td> 
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                </table>
+                {%else%} 
+                    <p style="text-align: center;" > No Books are found </p> 
+                {% endif %} 
+                </div>
+              </div>
+        </body>
+        </html> -->
+
+    {% endblock %}

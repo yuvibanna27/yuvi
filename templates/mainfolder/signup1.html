@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+{% extends 'mainfolder/base1.html' %}
+    {% block body_block %}
+    <!DOCTYPE html>
+    {% load static %}  
+    <html leng="en">
+        <head>
+          <title>addbook </title>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <!-- <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+          <link rel="stylesheet" href="{% static 'cssfile/demo1.css' %}">
+          <style>
+             
+            * {
+              box-sizing: border-box;
+            }
+            
+            input[type=text], select, textarea {
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              resize: vertical;
+            }
+            
+            label {
+              padding: 12px 12px 12px 0;
+              display: inline-block;
+            }
+            
+            input[type=submit] {
+              background-color: #4CAF50;
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              float: right;
+            }
+            
+            input[type=submit]:hover {
+              background-color: #45a049;
+            }
+            
+            .container {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+            
+            .col-25 {
+              float: left;
+              width: 25%;
+                
+              margin-top: 6px;
+            }
+            
+            .col-75 {
+              float: left;
+              width: 50%;
+              margin-top: 6px;
+              
+            }
+            .col-751 {
+              float: left;
+              width: 50%;
+              margin-top: 6px;
+              margin-left: 0px;
+            }
+            .row1:hover {
+                 background-color: black;
+                }
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+              .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+              }
+            }
+            </style>
+        </head>
+        <body>
+          {% load crispy_forms_tags %}  
+          <div class="jumbotron">
+            <div class="container">
+                <form method="POST"  >
+                    {% csrf_token %}
+                    {% include 'mainfolder/messages.html' %}
+                  <div class="row">
+                    <div class="col-25">
+                        <label for="fname">Student Name</label>
+                      </div>
+                      <div class="col-75">
+                        {{form.studentname}}
+                      </div>
+                    </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="fname">email</label>
+                  </div>
+                  <div class="col-75">
+                    {{form.email}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="fname">password</label>
+                  </div>
+                  <button  style ="width:80px; height: 40px; border: solid black 2px; background-color: orangered; color: white; margin-top: 10px; margin-left:0px; border-radius: 10px;" onclick="myFunction()"  type="button" value="Reset">Show</button>
+                  <div class="col-75">
+                    {{form.password}}                   
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-25">
+                      <label for="fname">Class Name</label>
+                    </div>
+                    <div class="col-75">
+                      {{form.classname}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">Branch</label>
+                    </div>
+                    <div class="col-75">
+                      {{form.branch}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">Mobile_No.</label>
+                    </div>
+                    <div class="col-75">
+                      {{form.mobile_no}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">date_of_birth</label>
+                    </div>
+                    <div class="col-75">
+                      {{form.date_of_birth}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">Address</label>
+                    </div>
+                    <div class="col-75">
+                      {{form.address}}
+                    </div>
+                  </div>
+                             
+                <br>
+                <div  style="float: left; margin-left:24% ;" class="row1">
+                  <input style="border-radius: 10px;  border: solid black 2px; background-color: orangered;"   type="submit" value="Submit">
+                </div>
+                
+                </form>
+              </div>
+          </div>
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+ 
+            </script>
+            
+            
+        </body>
+    </html>
+
+    {% endblock %}

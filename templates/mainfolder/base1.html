@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html >
+    <head oncontextmenu="return false;"> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title> 
+        <link rel="stylesheet" href="{% static '/cssfiles/demo.css'%}"> 
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+        crossorigin="anonymous">
+        
+    </head>
+  <body oncontextmenu="return false;" style="text-align: center;"class="boss">
+	
+    <div class="wrapper">
+
+      <header class="header">
+        
+          <h1><a href="#">Library Accounts...!</a></h1>
+        
+      </header>
+      <nav  class="navbar navbar-light bg-light">
+    <div>
+        <ol>
+            <a style="margin: -10px; margin-left: 0px;" href="\">Home</a>
+            <a style="margin: -10px;  margin-left: 5px;" href="/addbook">AddBooks</a>
+            <a style="margin: -10px;  margin-left: 5px;" href="/showbooks">Booklist</a>
+            <a style="margin: -10px;  margin-left: 5px;" href="/signup">Signup</a>
+            <a style="margin: -10px;  margin-left: 5px;" href="/issuebook">Bookissue</a>
+            <a style="margin: -10px;  margin-left: 5px;" href="/alldata">All/record</a>
+            <a style="margin: -10px;  margin-left: 5px;" href="/admin/">Admin site</a> 
+            <a style="margin: -10px;  margin-left: 5px;" href="/admin/login/?next=/admin/"> </a>
+                        
+          </ol>
+    </div>
+    
+      
+      </nav>
+      <div class="container">
+   
+        {% block body_block %}
+
+        {% endblock %}
+      <footer  class="footer">LBS &yuvi; 2020</footer>
+      </div>  
+  </body>
+</html>
